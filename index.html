@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Rucker: contatti, specifiche LED e onboarding sponsor.">
+  <title>Rucker Partner Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#top" aria-label="Rucker">
+    <img src="assets/rucker-logo.svg" alt="Rucker" class="brand-logo">
+    <span class="brand-divider" aria-hidden="true"></span>
+  </a>
+  <nav aria-label="Navigazione principale">
+    <a href="#contacts">Contatti</a>
+    <a href="#led">Specifiche LED</a>
+    <a class="nav-cta" href="#onboarding">Completa onboarding</a>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="eyebrow">WELCOME TO THE TEAM</div>
+    <h1>Benvenuti<br>nel mondo <span>Rucker.</span></h1>
+    <p>Uno spazio dedicato ai partner per trovare i riferimenti operativi, consultare le specifiche tecniche e condividere con noi tutte le informazioni necessarie per iniziare al meglio la collaborazione.</p>
+    <div class="hero-actions">
+      <a class="btn primary" href="#onboarding">Avvia onboarding</a>
+      <a class="btn secondary" href="#contacts">Scopri i riferimenti</a>
+    </div>
+    <div class="hero-stats">
+      <div><strong>01</strong><span>Contatti diretti</span></div>
+      <div><strong>02</strong><span>Specifiche tecniche</span></div>
+      <div><strong>03</strong><span>Onboarding ordinato</span></div>
+    </div>
+  </section>
+
+  <section class="section" id="contacts">
+    <div class="section-heading">
+      <div><div class="eyebrow">WHO TO CONTACT</div><h2>I vostri riferimenti Rucker</h2></div>
+      <p>Per ogni necessità, contattate direttamente la persona indicata nella relativa area.</p>
+    </div>
+    <div class="cards contact-grid" id="contactGrid"></div>
+  </section>
+
+  <section class="section inverted" id="led">
+    <div class="section-heading">
+      <div><div class="eyebrow">LED BORDOCAMPO</div><h2>Tutte le specifiche,<br>in un unico spazio.</h2></div>
+      <p>Per garantire la corretta pubblicazione dei contenuti durante le partite, vi chiediamo di rispettare le indicazioni riportate qui sotto.</p>
+    </div>
+    <div class="spec-grid">
+      <article class="spec-card"><span>DIMENSIONE</span><strong>1280 × 256</strong><small>pixel</small></article>
+      <article class="spec-card"><span>FORMATO STATICO</span><strong>.JPG</strong><small>immagine</small></article>
+      <article class="spec-card"><span>FORMATO VIDEO</span><strong>.MP4</strong><small>video</small></article>
+      <article class="spec-card"><span>DURATA MASSIMA</span><strong>9 SEC</strong><small>solo video</small></article>
+    </div>
+    <div class="deadline"><span>SCADENZA CONSEGNA</span><strong>Lunedì 7 settembre</strong></div>
+
+    <form id="ledForm" class="partner-form led-form">
+      <div class="form-section">
+        <h3>Carica i materiali LED</h3>
+        <div class="form-grid two">
+          <label>Nome sponsor<input required name="sponsor" type="text" autocomplete="organization" placeholder="Nome sponsor"></label>
+          <label>Email referente<input required name="led_email" type="email" autocomplete="email" placeholder="nome@azienda.it"></label>
+        </div>
+      </div>
+      <div class="form-section">
+        <label class="file-field" id="ledDrop"><span>Materiali LED (.JPG / .MP4 / .ZIP)</span><input required name="led_files" type="file" accept=".jpg,.jpeg,image/jpeg,.mp4,video/mp4,.zip,application/zip,application/x-zip-compressed" multiple><em>Seleziona o trascina i file</em><small>Più file ammessi · max 20 MB totali</small></label>
+      </div>
+      <div class="form-actions"><button class="btn primary" id="ledSubmit" type="submit">Invia materiali LED</button><p id="ledStatus" role="status" aria-live="polite"></p></div>
+    </form>
+  </section>
+
+  <section class="section onboarding" id="onboarding">
+    <div class="section-heading">
+      <div><div class="eyebrow">PARTNER ONBOARDING</div><h2>Condividete con noi<br>i vostri riferimenti.</h2></div>
+      <p>Le informazioni saranno archiviate nel database partner Rucker. Logo e brand guidelines verranno salvati nella cartella Google Drive dedicata.</p>
+    </div>
+
+    <form id="partnerForm" class="partner-form">
+      <div class="form-section">
+        <h3>01 — Azienda</h3>
+        <div class="form-grid two">
+          <label>Nome azienda<input required name="company" type="text" autocomplete="organization" placeholder="Nome azienda"></label>
+          <label>Sito web<input name="website" type="url" placeholder="https://"></label>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3>02 — Referente marketing</h3>
+        <div class="form-grid two">
+          <label>Nome e cognome<input required name="marketing_name" type="text" autocomplete="name" placeholder="Nome Cognome"></label>
+          <label>Ruolo<input name="marketing_role" type="text" placeholder="Marketing Manager"></label>
+          <label>Email<input required name="marketing_email" type="email" autocomplete="email" placeholder="nome@azienda.it"></label>
+          <label>Telefono<input name="marketing_phone" type="tel" autocomplete="tel" placeholder="+39"></label>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3>03 — Newsletter Rucker</h3>
+        <p class="form-note">Inserite una o più email da includere nelle comunicazioni dedicate ai partner.</p>
+        <div id="newsletterEmails" class="repeat-list">
+          <div class="repeat-row"><input name="newsletter_email" type="email" placeholder="email@azienda.it"><button type="button" class="icon-btn remove-email" aria-label="Rimuovi email">×</button></div>
+        </div>
+        <button type="button" class="text-btn" id="addEmail">+ Aggiungi un'altra email</button>
+      </div>
+
+      <div class="form-section">
+        <h3>04 — Materiali del brand</h3>
+        <div class="form-grid two">
+          <label class="file-field"><span>Logo vettoriale (.SVG) *</span><input required name="logo_svg" type="file" accept=".svg,image/svg+xml"><em>Seleziona file SVG</em><small>Dimensione massima: 5 MB</small></label>
+          <label class="file-field"><span>Brand guidelines (facoltativo)</span><input name="brand_guidelines" type="file" accept=".pdf,application/pdf"><em>Seleziona PDF</em><small>Dimensione massima: 10 MB</small></label>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3>05 — Canali aziendali</h3>
+        <div class="form-grid two">
+          <label>Instagram<input name="instagram" type="text" placeholder="@azienda"></label>
+          <label>LinkedIn<input name="linkedin" type="url" placeholder="https://linkedin.com/company/..."></label>
+        </div>
+      </div>
+
+      <label class="consent"><input required type="checkbox" name="consent"><span>Confermo che le informazioni e i materiali condivisi possono essere utilizzati da Rucker per le attività previste dalla partnership.</span></label>
+      <div class="form-actions"><button class="btn primary" id="submitButton" type="submit">Invia informazioni</button><p id="formStatus" role="status" aria-live="polite"></p></div>
+    </form>
+  </section>
+
+</main>
+
+<footer><div class="footer-brand"><img src="assets/rucker-logo.svg" alt="Rucker"></div><p>Uno spazio dedicato a chi costruisce il progetto insieme a noi.</p><small>© <span id="year"></span> Rucker</small></footer>
+
+<div class="success-modal" id="successModal" hidden><div class="success-dialog"><button id="closeSuccess" aria-label="Chiudi">×</button><div class="eyebrow" id="successEyebrow">ONBOARDING COMPLETATO</div><h2 id="successTitle">Welcome to the<br>Rucker Family.</h2><p id="successBody">Abbiamo ricevuto correttamente le informazioni e i materiali. Il team Rucker vi contatterà se saranno necessari ulteriori dettagli.</p><strong>Ci vediamo in Arena.</strong></div></div>
+<script src="config.js"></script><script src="script.js"></script>
+</body>
+</html>
