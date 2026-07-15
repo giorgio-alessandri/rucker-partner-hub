@@ -60,6 +60,16 @@ form.addEventListener('submit', async (event) => {
     status.textContent = 'Il portale è pronto, ma deve ancora essere collegato a Google Apps Script nel file config.js.';
     return;
   }
+  const missing = [];
+  if (!form.elements.company.value.trim()) missing.push('Nome azienda');
+  if (!form.elements.marketing_name.value.trim()) missing.push('Nome e cognome referente');
+  if (!form.elements.marketing_email.value.trim()) missing.push('Email referente');
+  if (!form.elements.consent.checked) missing.push('il consenso');
+  if (missing.length) {
+    status.textContent = 'Compila i campi obbligatori: ' + missing.join(', ') + '.';
+    form.scrollIntoView({block:'start'});
+    return;
+  }
   if (!form.elements.logo_svg.files[0]) {
     status.textContent = 'Carica il logo vettoriale (.SVG) per completare l’invio.';
     form.elements.logo_svg.closest('.file-field').scrollIntoView({block:'center'});
@@ -120,6 +130,10 @@ ledForm.addEventListener('submit', async (event) => {
     ledStatus.textContent = 'Il portale è pronto, ma deve ancora essere collegato a Google Apps Script nel file config.js.';
     return;
   }
+  const missing = [];
+  if (!ledForm.elements.sponsor.value.trim()) missing.push('Nome sponsor');
+  if (!ledForm.elements.led_email.value.trim()) missing.push('Email referente');
+  if (missing.length) { ledStatus.textContent = 'Compila i campi obbligatori: ' + missing.join(', ') + '.'; return; }
   const files = [...ledInput.files];
   if (!files.length) { ledStatus.textContent = 'Aggiungi almeno un file.'; return; }
   const total = files.reduce((sum, f) => sum + f.size, 0);
