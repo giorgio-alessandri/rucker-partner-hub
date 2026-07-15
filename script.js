@@ -60,6 +60,11 @@ form.addEventListener('submit', async (event) => {
     status.textContent = 'Il portale è pronto, ma deve ancora essere collegato a Google Apps Script nel file config.js.';
     return;
   }
+  if (!form.elements.logo_svg.files[0]) {
+    status.textContent = 'Carica il logo vettoriale (.SVG) per completare l’invio.';
+    form.elements.logo_svg.closest('.file-field').scrollIntoView({block:'center'});
+    return;
+  }
   submitButton.disabled = true;
   submitButton.textContent = 'Invio in corso…';
   status.textContent = 'Caricamento dei dati e dei materiali.';
