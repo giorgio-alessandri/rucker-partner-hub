@@ -1,6 +1,6 @@
 window.RUCKER_PORTAL_CONFIG = {
   // Incolla qui l'URL /exec ottenuto pubblicando Google Apps Script come Web App.
-  appsScriptUrl: "INCOLLA_QUI_URL_GOOGLE_APPS_SCRIPT",
+  appsScriptUrl: "https://script.google.com/macros/s/AKfycbyfcZ1Dn6Z_Ftknec3n8MnTFhH02dSA5Dye9M5XFCFUtN_KXOB9h4DwZd27s-xd-vYm/exec",
   contacts: [
     {
       icon: "TKT",
