@@ -13,7 +13,7 @@ const emailList = document.getElementById('newsletterEmails');
 addEmail.addEventListener('click', () => {
   const row = document.createElement('div');
   row.className = 'repeat-row';
-  row.innerHTML = `<input name="newsletter_email" type="email" placeholder="email@azienda.it"><button type="button" class="icon-btn remove-email" aria-label="Rimuovi email">×</button>`;
+  row.innerHTML = `<input name="newsletter_email" type="text" placeholder="email@azienda.it"><button type="button" class="icon-btn remove-email" aria-label="Rimuovi email">×</button>`;
   emailList.appendChild(row);
 });
 emailList.addEventListener('click', (event) => {
