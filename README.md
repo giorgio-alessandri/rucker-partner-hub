@@ -17,7 +17,7 @@ Lo smistamento avviene tramite il campo `formType` (`led` / `onboarding`) nel pa
 Apri `index.html` con Chrome/Safari. Il form non invierà dati finché non viene inserito l'URL di Google Apps Script in `config.js`.
 
 ## 2. Configurare Google Apps Script
-Accedi con `marketingrucker@gmail.com`.
+Accedi con l'account Google del portale (preferibile un account consolidato o Workspace @rucker.it; evita un Gmail appena creato, viene facilmente bannato per invio automatico).
 
 1. Vai su Google Apps Script e crea un nuovo progetto chiamato **Rucker Partner Portal**.
 2. Copia il contenuto di `google-apps-script/Code.gs` nel file `Code.gs` del progetto.
@@ -25,7 +25,7 @@ Accedi con `marketingrucker@gmail.com`.
 4. Clicca **Esegui** su una funzione qualsiasi una prima volta e autorizza accesso a Fogli, Drive e Gmail. Se serve, crea temporaneamente una funzione `setup(){ getOrCreateSpreadsheet_(); }`, eseguila e poi rimuovila.
 5. Clicca **Distribuisci → Nuova distribuzione → App web**.
 6. Imposta:
-   - Esegui come: **Me / marketingrucker@gmail.com**
+   - Esegui come: **Me** (l'account del portale)
    - Chi ha accesso: **Chiunque**
 7. Copia l'URL che termina con `/exec`.
 8. Apri `config.js` e sostituisci `INCOLLA_QUI_URL_GOOGLE_APPS_SCRIPT` con quell'URL.

@@ -1,6 +1,6 @@
 /**
  * RUCKER PARTNER PORTAL — GOOGLE APPS SCRIPT
- * Proprietario consigliato: marketingrucker@gmail.com
+ * Proprietario: l'account Google del portale (preferibile un account consolidato o Workspace @rucker.it)
  */
 const SETTINGS = {
   SHEET_NAME: 'Sponsor Onboarding',
